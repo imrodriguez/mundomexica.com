@@ -6,10 +6,12 @@ import { CategoriesSection } from '../components/CategoriesSection';
 import { getPosts } from "../services/Posts";
 import { getWebsiteConfig } from '../services/WebsiteConfig';
 import { getCategories } from '../services/Categories';
+import { DefaultSeo } from '../seo/default';
 
 export default function Home({ posts, highlighted, website, categories }) {
   return (
     <>
+      <DefaultSeo/>
       <Container maxWidth="lg">
         <Title title={website.fields.name} description={website.fields.description} />
         <BlogPostPreview highlighted={highlighted} posts={posts} limited={true} />

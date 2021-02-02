@@ -3,16 +3,20 @@ import { getCategories, getCategory } from '../../services/Categories';
 import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
 import { BlogPostPreview } from '../../components/BlogPostPreview';
+import { CategorySeo } from '../../seo/category';
 
 export default function Article({ category, posts }) {
     return (
-        <Container>
-            <Section center>
-                <h1>{category.fields.name}</h1>
-                <p align='center'>{category.fields.description}</p>
-            </Section>
-            <BlogPostPreview posts={posts}/>
-        </Container>
+        <>
+            <CategorySeo />
+            <Container>
+                <Section center>
+                    <h1>{category.fields.name}</h1>
+                    <p align='center'>{category.fields.description}</p>
+                </Section>
+                <BlogPostPreview posts={posts} />
+            </Container>
+        </>
     )
 };
 
