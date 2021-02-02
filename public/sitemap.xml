@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://mundomexica.com/404</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/articulo/aztlan-un-mito-o-una-realidad</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/articulo/la-evangelizacion-de-mexico-en-el-siglo-xvii</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/articulo/resena-serie-hernan</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/articulo/test</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/articulos</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/categoria/civilizacion-mexica</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/categoria/religion-y-cosmogonia</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/sobre-mi</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mundomexica.com/</loc>
+		<lastmod>2021-02-02</lastmod>
+	</url>
+</urlset>
