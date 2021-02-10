@@ -42,7 +42,10 @@ const ArticleSeo = ({ article }) => (
                 title: article.fields.title,
                 description: article.fields.metaDescription,
                 images: [
-                    { url: article.fields.image.fields.file.url },
+                    {
+                        url: article.fields.image.fields.file.url,
+                        alt: article.fields.image.fields.title,
+                    },
                 ],
                 site_name: generalData.name,
             }}

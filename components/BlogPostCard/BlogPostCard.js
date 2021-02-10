@@ -1,6 +1,6 @@
 import { Card, CardImage, CardContent, Category } from "./styles";
 
-const BlogPostCard = ({ title, image, description, category, url }) => (
+const BlogPostCard = ({ title, image, category, url }) => (
   <Card>
     <a href={`/articulo/${url}`}>
       <CardImage

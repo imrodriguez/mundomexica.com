@@ -7,7 +7,7 @@ import { DefaultSeo } from '../seo/default';
 export default function Articulos({ posts }) {
   return (
     <>
-      <DefaultSeo />
+      <DefaultSeo page="Articulos"/>
       <Section center>
         <Container maxWidth="lg">
           <h1>Articulos</h1>
@@ -19,7 +19,7 @@ export default function Articulos({ posts }) {
 };
 
 export async function getStaticProps() {
-  let posts = await getPosts();
+  const posts = await getPosts();
 
   return { props: { posts: posts.items } };
 }

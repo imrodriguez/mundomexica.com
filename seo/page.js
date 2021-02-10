@@ -12,6 +12,12 @@ const PageSeo = ({ page }) => (
                 title: page.fields.title,
                 description: page.fields.metaDescription,
                 site_name: generalData.name,
+                images: [
+                    {
+                        url: generalData.defautOpengraph.fields.file.url,
+                        alt: generalData.defautOpengraph.fields.title,
+                    },
+                ],
             }}
             twitter={{
                 handle: '@handle',

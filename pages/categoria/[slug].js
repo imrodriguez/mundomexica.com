@@ -7,16 +7,16 @@ import { CategorySeo } from '../../seo/category';
 
 export default function Article({ category, posts }) {
     return (
-        <>
-            <CategorySeo />
-            <Container>
-                <Section center>
-                    <h1>{category.fields.name}</h1>
-                    <p align='center'>{category.fields.description}</p>
-                </Section>
-                <BlogPostPreview posts={posts} />
-            </Container>
-        </>
+      <>
+        <CategorySeo category={category} />
+        <Container>
+          <Section center>
+            <h1>{category.fields.name}</h1>
+            <p align='center'>{category.fields.description}</p>
+          </Section>
+          <BlogPostPreview posts={posts} />
+        </Container>
+      </>
     )
 };
 
@@ -28,9 +28,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    let category = await getCategory(params.slug);
-    category = category.items[0];
-    const posts = await getPostsByCategory(category.sys.id);
+    const category = await getCategory(params.slug);
+    const posts = await getPostsByCategory(category.items[0].sys.id);
 
-    return { props: { category, posts: posts.items } };
+    return { props: { category: category.items[0], posts: posts.items } };
 }

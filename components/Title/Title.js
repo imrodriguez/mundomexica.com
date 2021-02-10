@@ -5,10 +5,10 @@ const Title = ({ title, description }) => (
   <Wrapper>
     <h1>
       <Name>{title}</Name>
-      <Separator src="/separador.png" alt="separador"/>
+      <Separator src="/separador.png" alt="separador" />
       <Surname>{description}</Surname>
     </h1>
-    <SocialButtons/>
+    <SocialButtons />
   </Wrapper>
 );
 

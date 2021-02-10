@@ -1,10 +1,10 @@
-import { NavBar, Bar, Logo, Nav, HamburguerToggle } from "./styles";
-import { Container } from "../Container";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuidv4 } from 'uuid';
+import { Container } from "../Container";
+import { NavBar, Bar, Logo, Nav, HamburguerToggle } from "./styles";
 import Menu from '../../config/menu.json';
 
 const Header = ({ logo }) => {
@@ -12,7 +12,7 @@ const Header = ({ logo }) => {
   const router = useRouter();
 
   const toggleMenu = () => {
-    setOpen(open ? false : true);
+    setOpen(!open);
   };
 
   return (
@@ -25,8 +25,8 @@ const Header = ({ logo }) => {
           <Nav dataOpen={open}>
             <ul>
               {Menu.map(item => (
-                <a href={`/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`}>
-                  <li key={uuidv4()} data-active={router.query.slug === item.fields.url} >
+                <a href={`/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`} key={uuidv4()}>
+                  <li data-active={router.query.slug === item.fields.url}>
                     {item.fields.title || item.fields.name}
                   </li>
                 </a>

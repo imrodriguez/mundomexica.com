@@ -1,6 +1,6 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getPages, getPage } from '../services/Pages';
 import { getPostsByCategory } from '../services/Posts';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { BlogPostPreview } from '../components/BlogPostPreview';
@@ -8,16 +8,16 @@ import { PageSeo } from '../seo/page';
 
 export default function Page({ page, posts }) {
     return (
-        <>
-            <PageSeo />
-            <Container>
-                <Section center>
-                    <h1>{page.fields.title}</h1>
-                    {documentToReactComponents(page.fields.body)}
-                </Section>
-                {posts && <BlogPostPreview posts={posts.items} />}
-            </Container>
-        </>
+      <>
+        <PageSeo page={page} />
+        <Container>
+          <Section center>
+            <h1>{page.fields.title}</h1>
+            {documentToReactComponents(page.fields.body)}
+          </Section>
+          {posts && <BlogPostPreview posts={posts.items} />}
+        </Container>
+      </>
     )
 };
 

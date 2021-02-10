@@ -11,10 +11,10 @@ import { DefaultSeo } from '../seo/default';
 export default function Home({ posts, highlighted, website, categories }) {
   return (
     <>
-      <DefaultSeo/>
+      <DefaultSeo page="Inicio"/>
       <Container maxWidth="lg">
         <Title title={website.fields.name} description={website.fields.description} />
-        <BlogPostPreview highlighted={highlighted} posts={posts} limited={true} />
+        <BlogPostPreview highlighted={highlighted} posts={posts} limited />
 
         <Section center>
           <h2>Categorias</h2>

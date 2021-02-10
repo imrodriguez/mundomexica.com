@@ -1,13 +1,13 @@
+import { v4 as uuidv4 } from 'uuid';
 import { Grid } from "../Grid";
 import { BlogPostCard, Highlighted } from "../BlogPostCard";
 import { Button } from "../Button";
 import { Section } from "../Section";
 import { ArticleItem } from '../../seo/articleItem';
-import { v4 as uuidv4 } from 'uuid';
 
 const BlogPostPreview = ({ posts = [], highlighted, limited = false }) => (
   <>
-    {highlighted &&
+    {highlighted && (
       <div key={uuidv4()}>
         <ArticleItem article={highlighted} />
         <Highlighted
@@ -18,7 +18,7 @@ const BlogPostPreview = ({ posts = [], highlighted, limited = false }) => (
           url={highlighted.fields.url}
         />
       </div>
-    }
+    )}
 
     <Grid columns={3} maxWidth='900'>
       {posts.map((post) => (

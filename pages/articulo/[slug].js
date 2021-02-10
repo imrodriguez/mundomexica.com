@@ -1,5 +1,5 @@
-import { getPosts, getPost } from '../../services/Posts';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { getPosts, getPost } from '../../services/Posts';
 import { Container } from '../../components/Container';
 import { ContentBox } from '../../components/ContentBox';
 import { Image } from '../../components/Image';
@@ -8,19 +8,19 @@ import { ArticleSeo } from '../../seo/article';
 
 export default function Article({ post }) {
     return (
-        <>
-            <ArticleSeo article={post}/>
-            <Container>
-                <ContentBox>
-                    <Image image={post.fields.image} />
-                    <div>
-                        <h1>{post.fields.title}</h1>
-                        <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription}/>
-                        {documentToReactComponents(post.fields.body)}
-                    </div>
-                </ContentBox>
-            </Container>
-        </>
+      <>
+        <ArticleSeo article={post} />
+        <Container>
+          <ContentBox>
+            <Image image={post.fields.image} />
+            <div>
+              <h1>{post.fields.title}</h1>
+              <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+              {documentToReactComponents(post.fields.body)}
+            </div>
+          </ContentBox>
+        </Container>
+      </>
     )
 };
 
@@ -31,8 +31,8 @@ export async function getStaticPaths() {
     return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-    const post = await getPost(params.slug);
+export async function getStaticProps({ params, preview = false  }) {
+    const post = await getPost(params.slug, preview);
 
     return { props: { post: post.items[0] } };
 }

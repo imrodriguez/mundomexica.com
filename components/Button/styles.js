@@ -18,6 +18,8 @@ export const StyledButton = styled.button`
     if (props.variant === "large") {
       return `font-size: 1.3em;`;
     }
+
+    return null;
   }}
 `;
 
@@ -41,6 +43,8 @@ export const StyledLink = styled.a`
     if (props.variant === "large") {
       return `font-size: 1.3em;`;
     }
+
+    return null;
   }}
 `;
 

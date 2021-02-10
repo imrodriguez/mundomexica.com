@@ -7,7 +7,9 @@
     "build": "npm run getMenu && npm run getWebSiteConfig && next build",
     "start": "next start",
     "getWebSiteConfig": "node ./actions/getWebSiteConfig.js",
-    "getMenu": "node ./actions/getMenu.js"
+    "getMenu": "node ./actions/getMenu.js",
+    "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext js,jsx",
+    "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext js,jsx"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
@@ -27,5 +29,16 @@
     "react-share": "^4.3.1",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^1.7.0"
   }
 }

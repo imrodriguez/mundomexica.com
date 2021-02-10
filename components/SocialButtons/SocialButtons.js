@@ -4,18 +4,18 @@ import { Icon } from './styles';
 import generalData from '../../config/generalData.json';
 
 const SocialButtons = () => (
-    <div>
-        <Icon>
-            <a href={generalData.instagram} target='_blank'>
-                <FontAwesomeIcon icon={faInstagram} />
-            </a>
-        </Icon>
-        <Icon>
-            <a href={generalData.twitter} target='_blank'>
-                <FontAwesomeIcon icon={faTwitter} />
-            </a>
-        </Icon>
-    </div>
+  <div>
+    <Icon>
+      <a href={generalData.instagram} rel="noreferrer" target='_blank'>
+        <FontAwesomeIcon icon={faInstagram} />
+      </a>
+    </Icon>
+    <Icon>
+      <a href={generalData.twitter} rel="noreferrer" target='_blank'>
+        <FontAwesomeIcon icon={faTwitter} />
+      </a>
+    </Icon>
+  </div>
 );
 
 export { SocialButtons };

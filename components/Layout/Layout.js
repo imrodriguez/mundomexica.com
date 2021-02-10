@@ -5,13 +5,13 @@ import { Background } from './styles';
 import Theme from '../../styles/theme';
 
 const Layout = ({ children }) => (
-    <Theme>
-        <Background image={generalData.background.fields.file.url}>
-            <Header logo={generalData.logo}/>
-            {children}
-            <Footer/>
-        </Background>
-    </Theme>
+  <Theme>
+    <Background image={generalData.background.fields.file.url}>
+      <Header logo={generalData.logo} />
+      {children}
+      <Footer />
+    </Background>
+  </Theme>
 );
 
 export { Layout };
