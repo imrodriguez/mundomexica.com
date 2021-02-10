@@ -1,4 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { getPosts, getPost } from '../../services/Posts';
 import { Container } from '../../components/Container';
 import { ContentBox } from '../../components/ContentBox';
@@ -6,33 +7,47 @@ import { Image } from '../../components/Image';
 import { SocialShareSection } from '../../components/SocialShareSection';
 import { ArticleSeo } from '../../seo/article';
 
-export default function Article({ post }) {
-    return (
+const dtrOptions = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => (
       <>
-        <ArticleSeo article={post} />
-        <Container>
-          <ContentBox>
-            <Image image={post.fields.image} />
-            <div>
-              <h1>{post.fields.title}</h1>
-              <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
-              {documentToReactComponents(post.fields.body)}
-            </div>
-          </ContentBox>
-        </Container>
+        <img
+          src={node.data?.target?.fields?.file?.url}
+          alt={node.data?.target?.fields?.title}
+        />
+        <figcaption>{node.data?.target?.fields?.title}</figcaption>
       </>
-    )
+    ),
+  },
+};
+
+export default function Article({ post }) {
+  return (
+    <>
+      <ArticleSeo article={post} />
+      <Container>
+        <ContentBox>
+          <Image image={post.fields.image} />
+          <div>
+            <h1>{post.fields.title}</h1>
+            <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+            {documentToReactComponents(post.fields.body, dtrOptions)}
+          </div>
+        </ContentBox>
+      </Container>
+    </>
+  )
 };
 
 export async function getStaticPaths() {
-    const posts = await getPosts();
-    const paths = posts.items.map(item => ({ params: { slug: item.fields.url } }));
+  const posts = await getPosts();
+  const paths = posts.items.map(item => ({ params: { slug: item.fields.url } }));
 
-    return { paths, fallback: false };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params, preview = false }) {
-    const post = await getPost(params.slug, preview);
+  const post = await getPost(params.slug, preview);
 
-    return { props: { post: post.items[0] } };
+  return { props: { post: post.items[0] } };
 }

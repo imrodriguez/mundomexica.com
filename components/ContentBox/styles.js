@@ -39,4 +39,12 @@ export const Content = styled.div`
         text-align: justify;
         font-size: 1.3em;
     }
+
+    figcaption {
+        background: #eee;
+        text-align: center;
+        padding: .7em;
+        margin-top: -.3em;
+        font-style: italic;
+    }
 `;
