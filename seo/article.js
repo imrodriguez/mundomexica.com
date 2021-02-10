@@ -14,13 +14,13 @@ const ArticleSeo = ({ article }) => (
                 },
                 "name": article.fields.title,
                 "headline": article.fields.title,
-                "image": article.fields.image.fields.file.url,
+                "image": `https:${generalData.logo.fields.file.url}`,
                 "publisher": {
                     "@type": "Organization",
                     "name": generalData.name,
                     "logo": {
                         "@type": "ImageObject",
-                        "url": generalData.logo.fields.file.url
+                        "url": `https:${generalData.logo.fields.file.url}`
                     }
                 },
                 "description": "",
@@ -43,7 +43,7 @@ const ArticleSeo = ({ article }) => (
                 description: article.fields.metaDescription,
                 images: [
                     {
-                        url: article.fields.image.fields.file.url,
+                        url: `https:${article.fields.image.fields.file.url}`,
                         alt: article.fields.image.fields.title,
                     },
                 ],

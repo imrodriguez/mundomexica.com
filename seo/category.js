@@ -14,7 +14,7 @@ const CategorySeo = ({ category }) => (
                 site_name: generalData.name,
                 images: [
                     {
-                        url: generalData.defautOpengraph.fields.file.url,
+                        url: `https:${generalData.defautOpengraph.fields.file.url}`,
                         alt: generalData.defautOpengraph.fields.title,
                     },
                 ],
