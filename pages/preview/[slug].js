@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { getPosts, getPost } from '../../services/Posts';
+import { getPost } from '../../services/Posts';
 import { Container } from '../../components/Container';
 import { ContentBox } from '../../components/ContentBox';
 import { Image } from '../../components/Image';
@@ -24,15 +24,8 @@ export default function Article({ post }) {
     )
 };
 
-export async function getStaticPaths() {
-    const posts = await getPosts();
-    const paths = posts.items.map(item => ({ params: { slug: item.fields.url } }));
-
-    return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params, preview = false }) {
-    const post = await getPost(params.slug, preview);
+export async function getServerSideProps({ params }) {
+    const post = await getPost(params.slug, true);
 
     return { props: { post: post.items[0] } };
 }
