@@ -1,4 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { getPost } from '../../services/Posts';
 import { Container } from '../../components/Container';
 import { ContentBox } from '../../components/ContentBox';

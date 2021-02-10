@@ -45,6 +45,5 @@ export const Content = styled.div`
         text-align: center;
         padding: .7em;
         margin-top: -.3em;
-        font-style: italic;
     }
 `;
