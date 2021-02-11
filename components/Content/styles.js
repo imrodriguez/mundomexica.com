@@ -9,6 +9,10 @@ export const ImageWrapper = styled.div`
         width: 100%;
     }
 
+    p {
+        min-height: 1.5em;
+    }
+
     @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
         width: 100%;
     }
