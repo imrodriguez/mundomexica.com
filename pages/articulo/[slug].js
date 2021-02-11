@@ -7,8 +7,6 @@ import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
 
 export default function Article({ post }) {
-  console.log(post)
-
   return (
     <>
       <ArticleSeo article={post} />
