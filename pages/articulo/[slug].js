@@ -20,7 +20,7 @@ export default function Article({ post, related }) {
             <Content content={post.fields.body} />
           </div>
         </ContentBox>
-        {related.length > 0 && <h2>Articulos relacionados</h2>}
+        {related.length > 0 && <h2>Artículos relacionados</h2>}
         <BlogPostPreview posts={related} />
       </Container>
     </>
