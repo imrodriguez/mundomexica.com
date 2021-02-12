@@ -1,5 +1,6 @@
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { ImageWrapper } from './styles';
+import { BlogPostCard } from '../BlogPostCard';
 
 const dtrOptions = {
     renderNode: {
@@ -10,7 +11,16 @@ const dtrOptions = {
                 />
                 <figcaption>{node.data?.target?.fields?.title}</figcaption>
             </ImageWrapper>
-        )
+        ),
+        [BLOCKS.EMBEDDED_ENTRY]: (node) => (
+            <BlogPostCard
+            title={node.data.target.fields.title}
+            image={node.data.target.fields.image}
+            category={node.data.target.fields.category}
+            description={node.data.target.fields.description}
+            url={node.data.target.fields.url}
+          />
+        ),
     },
     renderText: text =>
         text.split('\n').map((t, i) =>

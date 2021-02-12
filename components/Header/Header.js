@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Container } from "../Container";
 import { NavBar, Bar, Logo, Nav, HamburguerToggle } from "./styles";
 import Menu from '../../config/menu.json';
+import { BreadcrumbJsonLd } from 'next-seo';
 
 const Header = ({ logo }) => {
   const [open, setOpen] = useState(false);
@@ -16,29 +17,40 @@ const Header = ({ logo }) => {
   };
 
   return (
-    <NavBar>
-      <Container>
-        <Bar>
-          <div>
-            <a href="/"><Logo src={logo.fields.file.url} alt={logo.fields.title} /></a>
-          </div>
-          <Nav dataOpen={open}>
-            <ul>
-              {Menu.map(item => (
-                <a href={`/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`} key={uuidv4()}>
-                  <li data-active={router.query.slug === item.fields.url}>
-                    {item.fields.title || item.fields.name}
-                  </li>
-                </a>
-              ))}
-            </ul>
-          </Nav>
-          <HamburguerToggle onClick={toggleMenu}>
-            <FontAwesomeIcon icon={faBars} />
-          </HamburguerToggle>
-        </Bar>
-      </Container>
-    </NavBar>
+    <>
+      <BreadcrumbJsonLd
+      itemListElements={Menu.map((item, pos) => {
+        return {
+          position: pos + 1,
+          name: item.fields.title || item.fields.name,
+          item: `https://mundomexica.com/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`
+        }
+      })}
+    />
+      <NavBar>
+        <Container>
+          <Bar>
+            <div>
+              <a href="/"><Logo src={logo.fields.file.url} alt={logo.fields.title} /></a>
+            </div>
+            <Nav dataOpen={open}>
+              <ul>
+                {Menu.map(item => (
+                  <a href={`/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`} key={uuidv4()}>
+                    <li data-active={router.query.slug === item.fields.url}>
+                      {item.fields.title || item.fields.name}
+                    </li>
+                  </a>
+                ))}
+              </ul>
+            </Nav>
+            <HamburguerToggle onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faBars} />
+            </HamburguerToggle>
+          </Bar>
+        </Container>
+      </NavBar>
+    </>
   );
 };
 

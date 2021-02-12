@@ -1,42 +1,29 @@
-import { JsonLd } from "react-schemaorg";
 import generalData from '../config/generalData.json';
-import { NextSeo } from 'next-seo';
+import { NextSeo, ArticleJsonLd } from 'next-seo';
 
 const ArticleSeo = ({ article }) => (
     <>
-        <JsonLd
-            item={{
-                "@context": "http://schema.org",
-                "@type": "Article",
-                "author": {
-                    "@type": "Person",
-                    "name": "Ariadna"
-                },
-                "name": article.fields.title,
-                "headline": article.fields.title,
-                "image": `https:${generalData.logo.fields.file.url}`,
-                "publisher": {
-                    "@type": "Organization",
-                    "name": generalData.name,
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": `https:${generalData.logo.fields.file.url}`
-                    }
-                },
-                "description": "",
-                "datePublished": article.fields.date,
-                "dateModified": article.fields.date,
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": `https://mundomexica.com/${article.fields.url}/`
-                }
-            }}
+        <ArticleJsonLd
+            url={`https://mundomexica.com/articulo/${article.fields.url}/`}
+            title={article.fields.title}
+            images={[
+                `https:${article.fields.image.fields.file.url}`
+            ]}
+            datePublished="2015-02-05T08:00:00+08:00"
+            dateModified="2015-02-05T09:00:00+08:00"
+            authorName={['Ariadna Rodriguez Marquez', 'Mundo Mexica']}
+            publisherName="Ariadna Rodriguez Marquez"
+            publisherLogo={`https:${generalData.logo.fields.file.url}`}
+            description={article.fields.metaDescription}
         />
-
         <NextSeo
             title={`${article.fields.title} | ${generalData.name}`}
             description={article.fields.metaDescription}
-            canonical={`https://mundomexica.com/${article.fields.url}/`}
+            canonical={`https://mundomexica.com/articulo/${article.fields.url}/`}
+            additionalMetaTags={[{
+                name: 'keywords',
+                content: article.fields.keywords
+            }]}
             openGraph={{
                 url: `https://mundomexica.com/${article.fields.url}/`,
                 title: article.fields.title,

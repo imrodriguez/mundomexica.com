@@ -20,7 +20,8 @@ export default function Article({ post, related }) {
             <Content content={post.fields.body} />
           </div>
         </ContentBox>
-        <BlogPostPreview posts={related.items} />
+        {related.length > 0 && <h2>Articulos relacionados</h2>}
+        <BlogPostPreview posts={related} />
       </Container>
     </>
   )
@@ -36,9 +37,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, preview = false }) {
   const post = await getPost(params.slug, preview);
   const related = await getPostsByCategory(post.items[0].fields.category.sys.id);
-  /*const relatedPost = await related.filter(article => {
-    if (article )
-  })*/
+  const relatedPost = await related.items.filter(article => article.sys.id !== post.items[0].sys.id);
 
-  return { props: { post: post.items[0], related } };
+  return { props: { post: post.items[0], related: relatedPost } };
 }
