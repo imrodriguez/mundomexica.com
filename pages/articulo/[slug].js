@@ -30,6 +30,7 @@ export default function Article({ post, related }) {
 export async function getStaticPaths() {
   const posts = await getPosts();
   const paths = posts.items.map(item => ({ params: { slug: item.fields.url } }));
+  console.log(paths);
 
   return { paths, fallback: false };
 }

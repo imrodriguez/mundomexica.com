@@ -4,7 +4,7 @@ export const Content = styled.div`
     background: #fff;
     margin-top: 4em;
 
-    > img:first-child {
+    > picture:first-child img {
         width: 100%;
     }    
 

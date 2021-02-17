@@ -8,10 +8,6 @@ export const ImageWrapper = styled.div`
     img {
         width: 100%;
     }
-
-    @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
-        width: 100%;
-    }
 `;
 
 export const Wrapper = styled.div`
@@ -54,5 +50,9 @@ export const Wrapper = styled.div`
         text-align: center;
         padding: .7em;
         margin-top: -.3em;
+    }
+
+    hr + p {
+        text-align: center;
     }
 `;

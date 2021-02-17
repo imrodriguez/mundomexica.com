@@ -1,5 +1,8 @@
 const Image = ({ image }) => (
-  <img title={image.fields.title} src={image.fields.file.url} alt={image.fields.title} />
+  <picture>
+     <source srcSet={`${image.fields.file.url}?fm=webp`} />
+    <img title={image.fields.title} src={image.fields.file.url} alt={image.fields.title} />
+  </picture>
 );
 
 export { Image };

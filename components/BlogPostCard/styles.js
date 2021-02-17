@@ -35,7 +35,6 @@ export const CardImage = styled.img`
 
 export const CardImageHighlighted = styled(CardImage)`
   width: auto;
-  max-width: 66%;
 
   @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
     max-width: 100%;

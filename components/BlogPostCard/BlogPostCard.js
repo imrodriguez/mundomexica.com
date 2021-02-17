@@ -1,12 +1,15 @@
 import { Card, CardImage, CardContent, Category } from "./styles";
 
 const BlogPostCard = ({ title, image, category, url }) => (
-  <Card>
+  <Card className="blogPostCard">
     <a href={`/articulo/${url}`}>
-      <CardImage
-        src={image.fields.file.url}
-        alt="Contemplative Reptile"
-      />
+      <picture>
+        <source srcSet={`${image.fields.file.url}?w=311&fm=webp`} />
+        <CardImage
+          src={`${image.fields.file.url}?w=311`}
+          alt="Contemplative Reptile"
+        />
+      </picture>
     </a>
     <CardContent>
       <Category><a href={`/categoria/${category.fields?.url}`}>{category.fields?.name}</a></Category>

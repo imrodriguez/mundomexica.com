@@ -8,10 +8,13 @@ import {
 const Highlighted = ({ title, image, description, category, url }) => (
   <CardHighlighted>
     <a href={`/articulo/${url}`}>
-      <CardImageHighlighted
-        src={image.fields.file.url}
+      <picture>
+        <source srcSet={`${image.fields.file.url}?w=611&fm=webp`} />
+        <CardImageHighlighted
+        src={`${image.fields.file.url}?w=611`}
         alt="Contemplative Reptile"
       />
+      </picture>
     </a>
     <CardContentHighlighted>
       <div>
