@@ -30,15 +30,17 @@ export const CardHighlighted = styled(Card)`
 
 export const CardImage = styled.img`
   width: 100%;
+  height: auto;
   box-shadow: 4px 4px 10px 0px rgb(0 0 0 / 50%);
+
+  @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
+    width: 311px;
+    max-width: 100%;
+  }
 `;
 
 export const CardImageHighlighted = styled(CardImage)`
   width: auto;
-
-  @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
-    max-width: 100%;
-  }
 `;
 
 export const CardContent = styled.div`

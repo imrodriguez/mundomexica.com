@@ -13,6 +13,8 @@ const Highlighted = ({ title, image, description, category, url }) => (
         <CardImageHighlighted
         src={`${image.fields.file.url}?w=611`}
         alt="Contemplative Reptile"
+        width={611}
+        height={248}
       />
       </picture>
     </a>

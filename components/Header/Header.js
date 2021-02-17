@@ -31,7 +31,7 @@ const Header = ({ logo }) => {
         <Container>
           <Bar>
             <div>
-              <a href="/"><Logo src={logo.fields.file.url} alt={logo.fields.title} /></a>
+              <a href="/"><Logo src={`${logo.fields.file.url}?fm=webp`} alt={logo.fields.title} /></a>
             </div>
             <Nav dataOpen={open}>
               <ul>

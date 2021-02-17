@@ -8,6 +8,8 @@ const BlogPostCard = ({ title, image, category, url }) => (
         <CardImage
           src={`${image.fields.file.url}?w=311`}
           alt="Contemplative Reptile"
+          width={311}
+          height={126}
         />
       </picture>
     </a>

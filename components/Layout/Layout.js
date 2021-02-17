@@ -7,7 +7,7 @@ import Theme from '../../styles/theme';
 const Layout = ({ children }) => (
   <Theme>
     <Background image={`${generalData.background.fields.file.url}?fm=webp`}>
-      <Header logo={`${generalData.logo}?fm=webp`} />
+      <Header logo={generalData.logo} />
       {children}
       <Footer />
     </Background>
