@@ -18,6 +18,7 @@ export default function Article({ post, related }) {
           <div>
             <h1>{post.fields.title}</h1>
             <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+            <p className="time">Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
             <Content content={post.fields.body} />
           </div>
         </ContentBox>

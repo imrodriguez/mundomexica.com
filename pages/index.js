@@ -28,7 +28,7 @@ export default function Home({ posts, highlighted, website, categories }) {
 export async function getStaticProps() {
   let posts = await getPosts();
   const highlighted = posts.items[0];
-  posts = posts.items;
+  posts = posts.items.slice(0,7);
 
   if (posts.length === 1) {
     posts = [];

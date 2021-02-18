@@ -19,14 +19,14 @@ const Header = ({ logo }) => {
   return (
     <>
       <BreadcrumbJsonLd
-      itemListElements={Menu.map((item, pos) => {
-        return {
-          position: pos + 1,
-          name: item.fields.title || item.fields.name,
-          item: `https://mundomexica.com/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`
-        }
-      })}
-    />
+        itemListElements={Menu.map((item, pos) => {
+          return {
+            position: pos + 1,
+            name: item.fields.title || item.fields.name,
+            item: `https://mundomexica.com/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`
+          }
+        })}
+      />
       <NavBar>
         <Container>
           <Bar>
@@ -35,6 +35,11 @@ const Header = ({ logo }) => {
             </div>
             <Nav dataOpen={open}>
               <ul>
+                <a href={'/'}>
+                  <li data-active={router.query.slug === '/'}>
+                    Inicio
+                    </li>
+                </a>
                 {Menu.map(item => (
                   <a href={`/${item.fields.name ? 'categoria/' : ''}${item.fields.url}`} key={uuidv4()}>
                     <li data-active={router.query.slug === item.fields.url}>
@@ -42,6 +47,11 @@ const Header = ({ logo }) => {
                     </li>
                   </a>
                 ))}
+                <a href={'/sobre-mi'}>
+                  <li data-active={router.query.slug === '/sobre-mi'}>
+                    Sobre mi
+                    </li>
+                </a>
               </ul>
             </Nav>
             <HamburguerToggle onClick={toggleMenu}>

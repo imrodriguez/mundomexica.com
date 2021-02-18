@@ -25,4 +25,8 @@ export const Content = styled.div`
             padding: 2em 1em;
         }
     }
+
+    .time {
+        text-align: center;
+    }
 `;

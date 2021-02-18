@@ -9,8 +9,8 @@ const ArticleSeo = ({ article }) => (
             images={[
                 `https:${article.fields.image.fields.file.url}`
             ]}
-            datePublished="2015-02-05T08:00:00+08:00"
-            dateModified="2015-02-05T09:00:00+08:00"
+            datePublished={article.sys.createdAt}
+            dateModified={article.sys.updatedAt}
             authorName={['Ariadna Rodriguez Marquez', 'Mundo Mexica']}
             publisherName="Ariadna Rodriguez Marquez"
             publisherLogo={`https:${generalData.logo.fields.file.url}`}
