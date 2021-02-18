@@ -6,6 +6,7 @@ import { SocialShareSection } from '../../components/SocialShareSection';
 import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
 import { BlogPostPreview } from '../../components/BlogPostPreview';
+import { Comments } from '../../components/Comments';
 
 export default function Article({ post, related }) {
   return (
@@ -22,6 +23,10 @@ export default function Article({ post, related }) {
         </ContentBox>
         {related.length > 0 && <h2>Artículos relacionados</h2>}
         <BlogPostPreview posts={related} />
+        <Comments 
+        url={`https://mundomexica.com/articulo/${post.fields.url}`}
+        title={post.fields.title}
+        id={post.fields.url} />
       </Container>
     </>
   )

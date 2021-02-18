@@ -1730,6 +1730,11 @@
     "miller-rabin" "^4.0.0"
     "randombytes" "^2.0.0"
 
+"disqus-react@^1.0.11":
+  "integrity" "sha512-DZGc6kk16EGLAJtJAn+EdNHy44pBD0QJnuuOSyMf6qqsZrIYwkBFe72mdvRKfGYD1toR7bAvkRjmec/YQTrG+w=="
+  "resolved" "https://registry.npmjs.org/disqus-react/-/disqus-react-1.0.11.tgz"
+  "version" "1.0.11"
+
 "doctrine@^2.1.0":
   "integrity" "sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw=="
   "resolved" "https://registry.npmjs.org/doctrine/-/doctrine-2.1.0.tgz"
@@ -4241,7 +4246,7 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
-"react-dom@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@17.0.1":
+"react-dom@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^15.6.1 || ^16.0.0 || ^17.0.0", "react-dom@17.0.1":
   "integrity" "sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.1.tgz"
   "version" "17.0.1"
@@ -4278,7 +4283,7 @@
     "classnames" "^2.2.5"
     "jsonp" "^0.2.1"
 
-"react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@17.0.1":
+"react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.6.1 || ^16.0.0 || ^17.0.0", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.1.tgz"
   "version" "17.0.1"

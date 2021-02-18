@@ -4,7 +4,7 @@ sitemap({
   baseUrl: 'https://mundomexica.com',  
   ignoredPaths: ['next', 'index'],  
   pagesDirectory: __dirname + "/.next/server/pages",  
-  targetDirectory : 'public',
+  targetDirectory : "public",
   extraPaths: ['/'],
   ignoredExtensions: [
         'png',

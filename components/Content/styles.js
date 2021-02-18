@@ -19,16 +19,6 @@ export const Wrapper = styled.div`
         font-family: ${props => props.theme.fonts.primary};
     }
 
-    h1 {
-        font-size: 3em;
-        margin-bottom: 0;
-        text-align: center;
-
-        @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
-            font-size: 2em;
-        }
-    }
-
     h2 {
         font-size: 2.5em;
         text-align: center;
