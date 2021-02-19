@@ -49,8 +49,8 @@ const Header = ({ logo }) => {
                 ))}
                 <a href={'/sobre-mi'}>
                   <li data-active={router.query.slug === '/sobre-mi'}>
-                    Sobre mi
-                    </li>
+                    Sobre mí
+                  </li>
                 </a>
               </ul>
             </Nav>

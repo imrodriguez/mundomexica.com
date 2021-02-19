@@ -17,7 +17,7 @@ export default function Home({ posts, highlighted, website, categories }) {
         <BlogPostPreview highlighted={highlighted} posts={posts} limited />
 
         <Section center>
-          <h2>Categorias</h2>
+          <h2>Categorías</h2>
           <CategoriesSection categories={categories.items} />
         </Section>
       </Container>

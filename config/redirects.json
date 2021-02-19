@@ -1,0 +1,67 @@
+[
+    {
+        "source": "/dia-de-muertos",
+        "destination": "/articulo/origenes-del-dia-de-muertos-en-mexico/",
+        "permanent": true
+    },
+    {
+        "source": "/la-concepcion-de-la-vida-y-la-muerte",
+        "destination": "/articulo/como-entendian-la-vida-y-la-muerte-los-mexicas/",
+        "permanent": true
+    },
+    {
+        "source": "/el-mas-alla-mexica",
+        "destination": "/articulo/la-vida-despues-de-la-muerte-para-los-mexica/",
+        "permanent": true
+    },
+    {
+        "source": "/mexicas-o-aztecas",
+        "destination": "/articulo/diferencias-entre-mexicas-y-aztecas/",
+        "permanent": true
+    },
+    {
+        "source": "/resena-serie-hernan",
+        "destination": "/articulo/resena-serie-hernan/",
+        "permanent": true
+    },
+    {
+        "source": "/evangelizacion-de-mexico-en-el-siglo-xvii",
+        "destination": "/articulo/evangelizacion-de-mexico-en-el-siglo-xvii/",
+        "permanent": true
+    },
+    {
+        "source": "/aztlan-mito-o-realidad",
+        "destination": "/articulo/aztlan-mito-o-realidad/",
+        "permanent": true
+    },
+    {
+        "source": "/se-descubre-el-primer-templo-a-xipe-totec",
+        "destination": "/articulo/se-descubre-el-primer-templo-a-xipe-totec/",
+        "permanent": true
+    },
+    {
+        "source": "/evangelizacion-en-mexico",
+        "destination": "/articulo/evangelizacion-en-mexico/",
+        "permanent": true
+    },
+    {
+        "source": "/mexicas-una-sociedad-organizada-para-la-guerra",
+        "destination": "/articulo/mexicas-una-sociedad-organizada-para-la-guerra/",
+        "permanent": true
+    },
+    {
+        "source": "/los-sacrificios-humanos-y-ritos-mexicas",
+        "destination": "/articulo/los-sacrificios-humanos-y-ritos-mexicas/",
+        "permanent": true
+    },
+    {
+        "source": "/la-religion-mexica-los-principales-dioses",
+        "destination": "/articulo/la-religion-mexica-los-principales-dioses/",
+        "permanent": true
+    },
+    {
+        "source": "/la-formacion-del-imperio-mexica",
+        "destination": "/articulo/la-formacion-del-imperio-mexica/",
+        "permanent": true
+    }
+]

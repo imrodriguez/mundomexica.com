@@ -3,12 +3,14 @@ import { getCategories, getCategory } from '../../services/Categories';
 import { Container } from '../../components/Container';
 import { Section } from '../../components/Section';
 import { BlogPostPreview } from '../../components/BlogPostPreview';
+import { Banner } from '../../components/Banner';
 import { CategorySeo } from '../../seo/category';
 
 export default function Article({ category, posts }) {
     return (
       <>
         <CategorySeo category={category} />
+        <Banner image={category.fields.image} />
         <Container>
           <Section center>
             <h1>{category.fields.name}</h1>
