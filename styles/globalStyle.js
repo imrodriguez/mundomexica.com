@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
   p {
       font-family: ${props => props.theme.fonts.secondary};
       text-align: justify;
+      font-size: 1.3em;
   }
 
   p[align="center"] {
