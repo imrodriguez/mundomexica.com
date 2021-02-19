@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run getMenu && npm run getWebSiteConfig && next build && npm run sitemap",
+    "build": "npm run getMenu && npm run getWebSiteConfig && next build",
     "start": "next start",
     "sitemap": "node sitemap.js",
     "getWebSiteConfig": "node ./actions/getWebSiteConfig.js",
