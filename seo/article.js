@@ -4,7 +4,7 @@ import { NextSeo, ArticleJsonLd } from 'next-seo';
 const ArticleSeo = ({ article }) => (
     <>
         <ArticleJsonLd
-            url={`https://mundomexica.com/articulo/${article.fields.url}/`}
+            url={`https://mundomexica.com/articulo/${article.fields.url}`}
             title={article.fields.title}
             images={[
                 `https:${article.fields.image.fields.file.url}`
@@ -19,13 +19,13 @@ const ArticleSeo = ({ article }) => (
         <NextSeo
             title={`${article.fields.title} | ${generalData.name}`}
             description={article.fields.metaDescription}
-            canonical={`https://mundomexica.com/articulo/${article.fields.url}/`}
+            canonical={`https://mundomexica.com/articulo/${article.fields.url}`}
             additionalMetaTags={[{
                 name: 'keywords',
                 content: article.fields.keywords
             }]}
             openGraph={{
-                url: `https://mundomexica.com/${article.fields.url}/`,
+                url: `https://mundomexica.com/${article.fields.url}`,
                 title: article.fields.title,
                 description: article.fields.metaDescription,
                 images: [

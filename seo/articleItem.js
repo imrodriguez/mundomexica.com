@@ -26,7 +26,7 @@ const ArticleItem = ({ article }) => (
             "dateModified": article.fields.date,
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://mundomexica.com/${article.fields.url}/`
+                "@id": `https://mundomexica.com/${article.fields.url}`
             }
         }}
     />

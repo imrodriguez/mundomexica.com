@@ -5,7 +5,7 @@ const DefaultSeo = ({ page }) => (
     <NextSeo
         title={`${page} | ${generalData.name}`}
         description={generalData.description}
-        canonical={`https://mundomexica.com/`}
+        canonical={`https://mundomexica.com`}
         openGraph={{
             url: `${page} | ${generalData.name}`,
             title: generalData.name,

@@ -6,9 +6,9 @@ const CategorySeo = ({ category }) => (
         <NextSeo
             title={`${category.fields.name} | ${generalData.name}`}
             description={category.fields.metaDescription}
-            canonical={`https://mundomexica.com/categoria/${category.fields.url}/`}
+            canonical={`https://mundomexica.com/categoria/${category.fields.url}`}
             openGraph={{
-                url: `https://mundomexica.com/categoria/${category.fields.url}/`,
+                url: `https://mundomexica.com/categoria/${category.fields.url}`,
                 title: category.fields.name,
                 description: category.fields.metaDescription,
                 site_name: generalData.name,
