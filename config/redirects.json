@@ -51,7 +51,7 @@
     },
     {
         "source": "/los-sacrificios-humanos-y-ritos-mexicas",
-        "destination": "/articulo/los-sacrificios-humanos-y-ritos-mexicas/",
+        "destination": "/",
         "permanent": true
     },
     {
@@ -61,7 +61,7 @@
     },
     {
         "source": "/la-formacion-del-imperio-mexica",
-        "destination": "/articulo/la-formacion-del-imperio-mexica/",
+        "destination": "/",
         "permanent": true
     }
 ]
