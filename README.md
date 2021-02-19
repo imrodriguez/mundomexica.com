@@ -1,30 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![mundomexica](https://images.ctfassets.net/f4eawfh6wzqs/704eDb9zYLBdHDMjYDhmUo/5393ca6a2f74ae0fb77bd99407827f90/logoguapo-3-e1539723403555.png?fm=webp "Mundo Mexica")
 
-## Getting Started
+# Sobre mundomexica
+Mundo Mexica fue creado en octubre de 2018 como un espacio de divulgación histórica con un tono académico, pero próximo para todas aquellas personas interesadas. Ariadna Rodriguez Marquez está graduada en Historia por la Universidad Autónoma de Barcelona y realizó una comparativa bélica y religiosa entre las culturas mexica e hispana en el siglo XVI. Ella es la creadora y redactora de todos los contenidos que podéis leer en la web.
 
-First, run the development server:
+La publicación de los artículos a lo largo de estos años no ha sido consistente, puesto que no era su trabajo principal y sólo podía formarse y publicar en sus tiempos libres. Sin embargo, actualmente se está formando para adentrarse en el mundo del Marketing Digital y tiene como objetivo seguir creando contenido educativo sobre la civilización mexica.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+El contenido que se ve en el blog pretende ofrecer respuestas a todas aquellas personas que se encuentren en etapa de formación y que busquen información veraz, pero también va dirigido a todas las personas curiosas e interesadas en aprender.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Por último, queremos animaros a todos a compartir vuestras opiniones en el blog y en nuestras redes sociales para que Mundo Mexica también sea un espacio de debate desde el respeto y la tolerancia. Para contactar contactar con Ariadna acerca del contenido tratado en el blog rellena este formulario
