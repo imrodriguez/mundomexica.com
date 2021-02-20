@@ -14,20 +14,20 @@ export default function Article({ post, related }) {
       <ArticleSeo article={post} />
       <Container>
         <LazyLoad>
-        <ContentBox>
-          <Image image={post.fields.image} />
-          <div>
-            <h1>{post.fields.title}</h1>
-            <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
-            <p className="time">Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
-            <Content content={post.fields.body} />
-          </div>
-        </ContentBox>
+          <ContentBox>
+            <Image image={post.fields.image} />
+            <div>
+              <h1>{post.fields.title}</h1>
+              <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+              <p className="time">Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
+              <Content content={post.fields.body} />
+            </div>
+          </ContentBox>
         </LazyLoad>
         <LazyLoad>
           {related.length > 0 && <h2>Artículos relacionados</h2>}
           <BlogPostPreview posts={related} />
-        </LazyLoad> 
+        </LazyLoad>
       </Container>
     </>
   )
