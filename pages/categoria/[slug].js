@@ -11,7 +11,7 @@ export default function Article({ category, posts }) {
         <CategorySeo category={category} />
         <Container>
           <Section center>
-            <h1>{category.fields.name}</h1>
+            <h1>Artículos de la categoría: {category.fields.name}</h1>
             <p align='center'>{category.fields.description}</p>
           </Section>
           <BlogPostPreview posts={posts} />
