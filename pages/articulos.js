@@ -10,7 +10,7 @@ export default function Articulos({ posts }) {
       <DefaultSeo page="Articulos"/>
       <Section center>
         <Container maxWidth="lg">
-          <h1>Articulos</h1>
+          <h1>Artículos</h1>
           <BlogPostPreview posts={posts} />
         </Container>
       </Section>

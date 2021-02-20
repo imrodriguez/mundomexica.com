@@ -13,6 +13,7 @@ export default function Article({ post, related }) {
     <>
       <ArticleSeo article={post} />
       <Container>
+        <LazyLoad>
         <ContentBox>
           <Image image={post.fields.image} />
           <div>
@@ -22,6 +23,7 @@ export default function Article({ post, related }) {
             <Content content={post.fields.body} />
           </div>
         </ContentBox>
+        </LazyLoad>
         <LazyLoad>
           {related.length > 0 && <h2>Artículos relacionados</h2>}
           <BlogPostPreview posts={related} />
