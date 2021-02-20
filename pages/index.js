@@ -7,19 +7,21 @@ import { getPosts } from "../services/Posts";
 import { getWebsiteConfig } from '../services/WebsiteConfig';
 import { getCategories } from '../services/Categories';
 import { DefaultSeo } from '../seo/default';
+import LazyLoad from 'react-lazyload';
 
 export default function Home({ posts, highlighted, website, categories }) {
   return (
     <>
-      <DefaultSeo page="Inicio"/>
+      <DefaultSeo page="Inicio" />
       <Container maxWidth="lg">
         <Title title={website.fields.name} description={website.fields.description} />
         <BlogPostPreview highlighted={highlighted} posts={posts} limited />
-
-        <Section center>
-          <h2>Categorías</h2>
-          <CategoriesSection categories={categories.items} />
-        </Section>
+        <LazyLoad>
+          <Section center>
+            <h2>Categorías</h2>
+            <CategoriesSection categories={categories.items} />
+          </Section>
+        </LazyLoad>
       </Container>
     </>
   );
@@ -28,7 +30,7 @@ export default function Home({ posts, highlighted, website, categories }) {
 export async function getStaticProps() {
   let posts = await getPosts();
   const highlighted = posts.items[0];
-  posts = posts.items.slice(0,7);
+  posts = posts.items.slice(0, 7);
 
   if (posts.length === 1) {
     posts = [];
