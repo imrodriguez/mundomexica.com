@@ -8,14 +8,10 @@ import { BlogPostPreview } from '../../components/BlogPostPreview';
 import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import LazyLoad from 'react-lazyload';
-import Head from 'next/head';
 
 export default function Article({ post, related }) {
   return (
     <>
-      <Head>
-        <link rel="preload" as="image" href={`${post.fields.image.fields.file.url}?w=835&fm=webp&q=50`} />
-      </Head>
       <ArticleSeo article={post} />
       <Container>
         <LazyLoad>
