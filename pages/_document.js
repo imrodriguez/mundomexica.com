@@ -40,6 +40,8 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
           <link rel="preload" href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" as="font"/>
+          <link rel="preconnect" href="https://www.googletagmanager.com"></link>
+          <link rel="preconnect" href="https://images.ctfassets.net"></link>
           <link rel="preload" href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" as="font"/>
           {this.props.styleTags}
 

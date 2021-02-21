@@ -8,7 +8,7 @@ export const Content = styled.div`
         padding: 0;
     }
 
-    .lazyload-wrapper > picture:first-child img {
+    picture:first-child img {
         width: 100%;
         height: auto;
     }    

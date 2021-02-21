@@ -1,7 +1,6 @@
 import { getPosts, getPost, getPostsByCategory } from '../../services/Posts';
 import { Container } from '../../components/Container';
 import { ContentBox } from '../../components/ContentBox';
-import { Image } from '../../components/Image';
 import { SocialShareSection } from '../../components/SocialShareSection';
 import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
@@ -17,7 +16,10 @@ export default function Article({ post, related }) {
       <Container>
         <LazyLoad>
           <ContentBox>
-            <LazyLoad><Image image={post.fields.image} width={835} height={340} /></LazyLoad>
+            <picture>
+              <source srcSet={`${post.fields.image.fields.file.url}?w=835&fm=webp&q=50`} />
+              <img title={post.fields.image.fields.title} src={`${post.fields.image.fields.file.url}?w=835&fm=webp&q=50`} alt={post.fields.image.fields.title} width={835} height={133} />
+            </picture>
             <div>
               <h1>{post.fields.title}</h1>
               <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
@@ -31,8 +33,8 @@ export default function Article({ post, related }) {
                 <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
               </div>
               <div className="social-section">
-              <p>Siguenos en redes sociales</p>
-                <SocialButtons/>
+                <p>Siguenos en redes sociales</p>
+                <SocialButtons />
               </div>
             </div>
           </ContentBox>
