@@ -4,8 +4,13 @@ export const Content = styled.div`
     background: #fff;
     margin-top: 4em;
 
-    > picture:first-child img {
+    .lazyload-wrapper {
+        padding: 0;
+    }
+
+    .lazyload-wrapper > picture:first-child img {
         width: 100%;
+        height: auto;
     }    
 
     h1 {
@@ -28,5 +33,20 @@ export const Content = styled.div`
 
     .time {
         text-align: center;
+    }
+
+    .social {
+        padding-top: 0;
+        p {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .social-section {
+            > div {
+                width: max-content;
+                margin: 0 auto;
+            }
+        }
     }
 `;

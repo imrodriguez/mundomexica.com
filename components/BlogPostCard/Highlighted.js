@@ -12,7 +12,7 @@ const Highlighted = ({ title, image, description, category, url }) => (
         <source srcSet={`${image.fields.file.url}?w=611&fm=webp`} />
         <CardImageHighlighted
         src={`${image.fields.file.url}?w=611`}
-        alt="Contemplative Reptile"
+        alt={title}
         width={611}
         height={248}
       />

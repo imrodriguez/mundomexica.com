@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #777;
+    color: #c62727;;
   }
 
   h1, h2, h3, h4, h5, h6 {

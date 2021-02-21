@@ -7,7 +7,7 @@ const BlogPostCard = ({ title, image, category, url }) => (
         <source srcSet={`${image.fields.file.url}?w=311&fm=webp`} />
         <CardImage
           src={`${image.fields.file.url}?w=311`}
-          alt="Contemplative Reptile"
+          alt={title}
           width={311}
           height={126}
         />

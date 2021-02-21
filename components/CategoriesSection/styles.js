@@ -10,7 +10,6 @@ export const Grid = styled.div`
     }
 
     > div {
-        max-height: 430px;
         overflow: hidden;
     }
 `;
@@ -52,6 +51,7 @@ export const Element = styled.div`
         font-size: 1.5em;
         text-align: center;
         font-family: ${props => props.theme.fonts.primary};
+        text-shadow: 2px 2px 2px #000000;
 
         @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {
             background: #000;
