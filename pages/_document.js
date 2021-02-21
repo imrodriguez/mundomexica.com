@@ -39,6 +39,8 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
+          <link rel="preload" href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" as="font"/>
+          <link rel="preload" href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" as="font"/>
           {this.props.styleTags}
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QRWQ5EG14"></script>

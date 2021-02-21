@@ -3,9 +3,9 @@ const Image = ({ image, width = 350, height }) => {
 
   return (
     <picture>
-    <source srcSet={`${url}&fm=webp`} />
-    <img loading="lazy" title={image.fields.title} src={url} alt={image.fields.title} width={width} height={height}/>
-  </picture>
+      <source srcSet={`${url}&fm=webp`} />
+      <img loading="lazy" title={image.fields.title} src={url} alt={image.fields.title} width={width} height={height} />
+    </picture>
   )
 };
 

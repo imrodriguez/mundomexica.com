@@ -1,19 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import useOnScreen from '../../hooks/useOnScreen';
 
 const Comments = ({ url, id, title }) => {
-    useEffect(() => {
-        window.disqus_config = () => {
-            this.page.url = url;
-            this.page.identifier = id;
-        };
+    const commentsRef = useRef();
+    const isVisible = useOnScreen(commentsRef);
+
+    const renderComments = () => {
         var d = document, s = d.createElement('script');
         s.src = 'https://mundomexica.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
-    }, []);
+    }
+
+    useEffect(() => {
+        if (isVisible) {
+            renderComments();
+        }
+    }, [isVisible]);
 
     return (
-        <div id="disqus_thread"></div>
+        <div ref={commentsRef} id="disqus_thread"></div>
     )
 };
 

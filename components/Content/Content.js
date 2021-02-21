@@ -6,9 +6,7 @@ import { Wrapper } from './styles';
 const Content = ({ content }) => {
     return (
         <Wrapper>
-            <LazyLoad>
-                {documentToReactComponents(content, dtrOptions)}
-            </LazyLoad>
+            {documentToReactComponents(content, dtrOptions)}
         </Wrapper>
     )
 }
