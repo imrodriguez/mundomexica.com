@@ -29,11 +29,11 @@ export default function Article({ post, related }) {
 
             <div className="social">
               <div className="social-section">
-                <p>Comparte este articulo en redes sociales</p>
+                <p>Comparte este artículo en redes sociales</p>
                 <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
               </div>
               <div className="social-section">
-                <p>Siguenos en redes sociales</p>
+                <p>Síguenos en redes sociales</p>
                 <SocialButtons />
               </div>
             </div>
