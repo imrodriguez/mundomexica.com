@@ -47,7 +47,7 @@ export default function Article({ post, related }) {
         
           {related.length > 0 && <h2>Artículos relacionados</h2>}
           <LazyLoad><BlogPostPreview posts={related} /></LazyLoad>
-          <Comments url={`https://mundomexica.com/articulo/${post.fields.url}`} id={post.fields.url} title={post.fields.title} />
+          <LazyLoad><Comments url={`https://mundomexica.com/articulo/${post.fields.url}`} id={post.fields.url} title={post.fields.title} /></LazyLoad>
       </Container>
     </>
   )
