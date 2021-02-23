@@ -1,5 +1,5 @@
-import { MaxWidth } from "./styles";
+import styles from './Container.module.css';
 
-const Container = ({ children }) => <MaxWidth>{children}</MaxWidth>;
+const Container = ({ children }) => <div className={styles.Container}>{children}</div>;
 
 export { Container };

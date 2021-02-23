@@ -1,0 +1,80 @@
+.BarWrapper {
+  background: #fff;
+}
+
+.Bar {
+  display: flex;
+  height: 4em;
+  padding: 0.5em 1em;
+  align-items: center;
+}
+
+.Bar > div:first-child {
+  flex-grow: 1;
+}
+
+.Logo {
+  height: 3em;
+}
+
+.Nav {
+  text-align: rigth;
+}
+
+.Nav ul {
+  list-style: none;
+}
+
+.Nav ul a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Nav ul li {
+  display: inline-block;
+  margin: 0 1em;
+  font-family: var(--font-primary);
+  font-weight: 200;
+}
+
+.Nav ul li:hover {
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.Nav ul li[data-active="true"] a {
+  font-weight: bold;
+}
+
+.HamburguerToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.HamburguerToggle svg {
+  font-size: 1.5em;
+}
+
+@media only screen and (max-width: 900px) {
+  .Nav {
+    display: none;
+  }
+
+  .Nav[data-open="true"] {
+    display: block;
+    position: absolute;
+    top: 4em;
+    left: 0;
+    width: 100%;
+    background: #fff;
+  }
+
+  .Nav[data-open="true"] ul li {
+    display: block;
+    padding: 0.5em 0;
+  }
+
+  .HamburguerToggle {
+      display: block;
+  }
+}

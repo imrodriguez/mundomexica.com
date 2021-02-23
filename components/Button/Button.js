@@ -1,18 +1,18 @@
-import { StyledButton, StyledLink } from "./styles";
+import styles from './Button.module.css';
 
 const Button = ({ children, action, variant }) => {
   if (typeof action === 'string') {
     return (
-      <StyledLink href={action} variant={variant}>
+      <a className={styles.Button} href={action} data-variant={variant}>
         {children}
-      </StyledLink>
+      </a>
     )
   }
 
   return (
-    <StyledButton onClick={action} variant={variant}>
+    <button className={styles.Button} onClick={action} data-variant={variant}>
       {children}
-    </StyledButton>
+    </button>
   );
 };
 

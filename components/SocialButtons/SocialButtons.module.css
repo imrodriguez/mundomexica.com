@@ -1,0 +1,17 @@
+.Icon {
+    margin: 0 .5em;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.Icon:hover a {
+    color: #666;
+}
+
+.Icon a {
+    color: #000;
+}
+
+.Icon svg {
+    font-size: 2em;
+}

@@ -1,11 +1,11 @@
-import { StyledFooter } from './styles';
+import styles from './Footer.module.css';
 
 const Footer = () => (
-  <StyledFooter>
+  <footer className={styles.Footer}>
     ©2021 Mundo Mexica | Website developed by 
     {' '}
     <a href="https://github.com/imrodriguez">imrodriguez</a>
-  </StyledFooter>
+  </footer>
 );
 
 export { Footer };

@@ -1,33 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
-
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
-
   render() {
     return (
       <Html lang="es">
@@ -39,11 +12,8 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-          <link rel="preload" href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" as="font"/>
-          <link rel="preconnect" href="https://www.googletagmanager.com"></link>
-          <link rel="preconnect" href="https://images.ctfassets.net"></link>
-          <link rel="preload" href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" as="font"/>
-          {this.props.styleTags}
+          <link rel="preload" href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" as="font" type="font/woff" crossorigin="anonymous"/>
+          <link rel="preload" href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" as="font" type="font/woff" crossorigin="anonymous"/>
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QRWQ5EG14"></script>
           <script

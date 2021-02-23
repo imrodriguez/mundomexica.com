@@ -1,0 +1,42 @@
+.Wrapper {
+  text-align: center;
+  margin: 70px 0;
+}
+
+.Wrapper p {
+  margin-top: 0;
+}
+
+.Separator {
+  display: block;
+  margin: 0 auto;
+  width: 19rem;
+}
+
+.Name {
+  font-family: var(--font-secondary);
+  display: block;
+  font-size: 2em;
+}
+
+.Surname {
+  font-family: var(--font-secondary);
+  font-weight: 100;
+  font-size: 0.8em;
+}
+
+@media only screen and (max-width: 900px) {
+  .Separator {
+    margin-top: 0.2em;
+  }
+
+  .Name {
+    font-size: 1em;
+  }
+
+  .Surname {
+    font-size: 0.4em;
+    display: inherit;
+    margin-top: 0.6em;
+  }
+}
