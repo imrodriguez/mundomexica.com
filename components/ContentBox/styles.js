@@ -8,7 +8,7 @@ export const Content = styled.div`
         padding: 0;
     }
 
-    picture:first-child img {
+    img.image-article {
         width: 100%;
         height: auto;
     }    
@@ -23,7 +23,7 @@ export const Content = styled.div`
         }
     }
 
-    > div {
+    .content {
         padding: 2em 4em;
 
         @media only screen and (max-width: ${props => props.theme.breakpoints.mobile}px) {

@@ -1,45 +1,49 @@
-import { BLOCKS } from '@contentful/rich-text-types';
-import { ImageWrapper } from './styles';
-import { BlogPostCard } from '../BlogPostCard';
-import LazyLoad from 'react-lazyload';
+import { BLOCKS } from "@contentful/rich-text-types";
+import { ImageWrapper } from "./styles";
+import { BlogPostCard } from "../BlogPostCard";
+import LazyLoad from "react-lazyload";
+import Image from "next/image";
 
 const dtrOptions = {
-    renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node) => (
-            <ImageWrapper width={node.data?.target?.fields?.file?.details?.image.width}>
-                <LazyLoad>
-                    <picture>
-                        <source srcSet={node.data?.target?.fields?.file?.url + `?fm=webp&w=${node.data?.target?.fields?.file?.details?.image.width}`} />
-                        <img loading="lazy"
-                            title={node.data?.target?.fields?.title}
-                            src={node.data?.target?.fields?.file?.url + `?w=${node.data?.target?.fields?.file?.details?.image.width}`}
-                            alt={node.data?.target?.fields?.title}
-                            width={node.data?.target?.fields?.file?.details?.image.width} />
-                    </picture>
-                </LazyLoad>
-                <figcaption>{node.data?.target?.fields?.title}</figcaption>
-            </ImageWrapper>
-        ),
-        [BLOCKS.EMBEDDED_ENTRY]: (node) => (
-            <BlogPostCard
-                title={node.data.target.fields.title}
-                image={node.data.target.fields.image}
-                category={node.data.target.fields.category}
-                description={node.data.target.fields.description}
-                url={node.data.target.fields.url}
-            />
-        ),
-    },
-    renderText: text =>
-        text.split('\n').map((t, i) =>
-            i > 0 ? (
-                <>
-                    <br />
-                    {t}
-                </>
-            ) : (
-                    t
-                ),
-        ),
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => (
+      <ImageWrapper
+        width={node.data?.target?.fields?.file?.details?.image.width}
+        height={node.data?.target?.fields?.file?.details?.image.height}
+      >
+        <LazyLoad>
+          <Image
+            layout="responsive"
+            title={node.data?.target?.fields?.title}
+            src={`https:${node.data?.target?.fields?.file?.url}?w=${node.data?.target?.fields?.file?.details?.image.width}`}
+            alt={node.data?.target?.fields?.title}
+            width={node.data?.target?.fields?.file?.details?.image.width}
+            height={node.data?.target?.fields?.file?.details?.image.height}
+          />
+        </LazyLoad>
+        <figcaption>{node.data?.target?.fields?.title}</figcaption>
+      </ImageWrapper>
+    ),
+    [BLOCKS.EMBEDDED_ENTRY]: (node) => (
+      <BlogPostCard
+        title={node.data.target.fields.title}
+        image={node.data.target.fields.image}
+        category={node.data.target.fields.category}
+        description={node.data.target.fields.description}
+        url={node.data.target.fields.url}
+      />
+    ),
+  },
+  renderText: (text) =>
+    text.split("\n").map((t, i) =>
+      i > 0 ? (
+        <>
+          <br />
+          {t}
+        </>
+      ) : (
+        t
+      )
+    ),
 };
 export { dtrOptions };

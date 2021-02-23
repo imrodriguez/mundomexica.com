@@ -8,23 +8,29 @@ import { BlogPostPreview } from '../../components/BlogPostPreview';
 import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import LazyLoad from 'react-lazyload';
+import Image from 'next/image';
 
 export default function Article({ post, related }) {
   return (
     <>
       <ArticleSeo article={post} />
       <Container>
-        <LazyLoad>
           <ContentBox>
-            <picture>
-              <source srcSet={`${post.fields.image.fields.file.url}?w=835&fm=webp`} />
-              <img title={post.fields.image.fields.title} src={`${post.fields.image.fields.file.url}?w=835&fm=webp`} alt={post.fields.image.fields.title} width={835} height={133} />
-            </picture>
-            <div>
+            <Image 
+            className="image-article"
+            title={post.fields.image.fields.title} 
+            src={`https:${post.fields.image.fields.file.url}?w=1140&fm=webp`} 
+            alt={post.fields.image.fields.title}
+            width="1140" 
+            height="462.81"
+            priority="true"
+            quality="100"
+            layout="responsive"/>
+            <div className="content">
               <h1>{post.fields.title}</h1>
               <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
               <p className="time">Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
-              <Content content={post.fields.body} />
+              <Content content={post.fields.body} />  
             </div>
 
             <div className="social">
@@ -38,14 +44,10 @@ export default function Article({ post, related }) {
               </div>
             </div>
           </ContentBox>
-        </LazyLoad>
-        <LazyLoad>
-
-
+        
           {related.length > 0 && <h2>Artículos relacionados</h2>}
-          <BlogPostPreview posts={related} />
+          <LazyLoad><BlogPostPreview posts={related} /></LazyLoad>
           <Comments url={`https://mundomexica.com/articulo/${post.fields.url}`} id={post.fields.url} title={post.fields.title} />
-        </LazyLoad>
       </Container>
     </>
   )
