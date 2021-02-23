@@ -17,8 +17,8 @@ export default function Article({ post, related }) {
         <LazyLoad>
           <ContentBox>
             <picture>
-              <source srcSet={`${post.fields.image.fields.file.url}?w=835&fm=webp&q=70`} />
-              <img title={post.fields.image.fields.title} src={`${post.fields.image.fields.file.url}?w=835&fm=webp&q=70`} alt={post.fields.image.fields.title} width={835} height={133} />
+              <source srcSet={`${post.fields.image.fields.file.url}?w=835&fm=webp`} />
+              <img title={post.fields.image.fields.title} src={`${post.fields.image.fields.file.url}?w=835&fm=webp`} alt={post.fields.image.fields.title} width={835} height={133} />
             </picture>
             <div>
               <h1>{post.fields.title}</h1>
