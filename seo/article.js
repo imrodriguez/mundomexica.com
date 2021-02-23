@@ -25,7 +25,7 @@ const ArticleSeo = ({ article }) => (
                 content: article.fields.keywords
             }]}
             openGraph={{
-                url: `https://mundomexica.com/${article.fields.url}`,
+                url: `https://mundomexica.com/articulo/${article.fields.url}`,
                 title: article.fields.title,
                 description: article.fields.metaDescription,
                 images: [
