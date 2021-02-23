@@ -1,6 +1,5 @@
 import { getPosts, getPost, getPostsByCategory } from '../../services/Posts';
 import { Container } from '../../components/Container';
-import { ContentBox } from '../../components/ContentBox';
 import { SocialShareSection } from '../../components/SocialShareSection';
 import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
@@ -9,41 +8,42 @@ import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import LazyLoad from 'react-lazyload';
 import Image from 'next/image';
+import styles from '../../styles/Article.module.css';
 
 export default function Article({ post, related }) {
   return (
     <>
       <ArticleSeo article={post} />
       <Container>
-          <ContentBox>
+          <div className={styles.ArticleBox}>
             <Image 
-            className="image-article"
+            className={styles.ImageArticle}
             title={post.fields.image.fields.title} 
             src={`https:${post.fields.image.fields.file.url}?w=1140&fm=webp`} 
             alt={post.fields.image.fields.title}
-            width="1140" 
-            height="462.81"
+            width="445" 
+            height="180"
             priority="true"
-            quality="100"
             layout="responsive"/>
-            <div className="content">
+
+            <div className={styles.ArticleMainWrapper}>
               <h1>{post.fields.title}</h1>
               <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
-              <p className="time">Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
+              <p className={styles.Time}>Publicado el <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time></p>
               <Content content={post.fields.body} />  
             </div>
 
-            <div className="social">
-              <div className="social-section">
+            <div className={styles.SocialSection}>
+              <div className={styles.SocialItem}>
                 <p>Comparte este artículo en redes sociales</p>
                 <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
               </div>
-              <div className="social-section">
+              <div className={styles.SocialItem}>
                 <p>Síguenos en redes sociales</p>
                 <SocialButtons />
               </div>
             </div>
-          </ContentBox>
+          </div>
         
           {related.length > 0 && <h2>Artículos relacionados</h2>}
           <LazyLoad><BlogPostPreview posts={related} /></LazyLoad>

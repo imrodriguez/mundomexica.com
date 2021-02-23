@@ -1,13 +1,12 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { dtrOptions } from './contentConfig';
-import LazyLoad from 'react-lazyload';
-import { Wrapper } from './styles';
+import styles from './Content.module.css';
 
 const Content = ({ content }) => {
     return (
-        <Wrapper>
+        <div className={styles.ContentWrapper}>
             {documentToReactComponents(content, dtrOptions)}
-        </Wrapper>
+        </div>
     )
 }
 

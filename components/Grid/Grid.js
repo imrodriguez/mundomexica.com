@@ -1,9 +1,9 @@
-import { Columns } from "./styles";
+import styles from './Grid.module.css';
 
-const Grid = ({ children, columns, maxWidth }) => (
-  <Columns numOfColumns={columns} maxWidth={maxWidth}>
+const Grid = ({ children }) => (
+  <div className={styles.Grid}>
     {children}
-  </Columns>
+  </div>
 );
 
 export { Grid };

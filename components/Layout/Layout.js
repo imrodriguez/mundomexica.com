@@ -1,17 +1,18 @@
-import generalData from '../../config/generalData.json';
-import { Header } from '../Header';
-import { Footer } from '../Footer';
-import { Background } from './styles';
-import Theme from '../../styles/theme';
+import generalData from "../../config/generalData.json";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 
 const Layout = ({ children }) => (
-  <Theme>
-    <Background image={`${generalData.background.fields.file.url}?fm=webp`}>
+  <>
+    <div style={{
+      backgroundImage: `url(https:${generalData.background.fields.file.url}?fm=webp)`,
+      minHeight: "100vh"
+    }}>
       <Header logo={generalData.logo} />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </Background>
-  </Theme>
+    </div>
+  </>
 );
 
 export { Layout };

@@ -1,15 +1,20 @@
-import { Wrapper, Name, Separator, Surname } from "./styles";
+import styles from './Title.module.css';
 import { SocialButtons } from '../SocialButtons';
 
 const Title = ({ title, description }) => (
-  <Wrapper>
+  <div className={styles.Wrapper}>
     <h1>
-      <Name>{title}</Name>
-      <Separator src="/separador.png" alt="separador" />
-      <Surname>{description}</Surname>
+      <span className={styles.Name}>{title}</span>
+      <img 
+      className={styles.Separator} 
+      src="/separador.png" 
+      alt="separador"
+      width="304"
+      height="5.38"/>
+      <span className={styles.Surname}>{description}</span>
     </h1>
     <SocialButtons />
-  </Wrapper>
+  </div>
 );
 
 export { Title };

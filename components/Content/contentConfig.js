@@ -1,5 +1,5 @@
 import { BLOCKS } from "@contentful/rich-text-types";
-import { ImageWrapper } from "./styles";
+import styles from "./Content.module.css";
 import { BlogPostCard } from "../BlogPostCard";
 import LazyLoad from "react-lazyload";
 import Image from "next/image";
@@ -7,9 +7,11 @@ import Image from "next/image";
 const dtrOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node) => (
-      <ImageWrapper
-        width={node.data?.target?.fields?.file?.details?.image.width}
-        height={node.data?.target?.fields?.file?.details?.image.height}
+      <div
+        className={styles.ImageWrapper}
+        style={{
+          width: node.data?.target?.fields?.file?.details?.image.height > 390 ? 500 : node.data?.target?.fields?.file?.details?.image.width
+        }}
       >
         <LazyLoad>
           <Image
@@ -22,7 +24,7 @@ const dtrOptions = {
           />
         </LazyLoad>
         <figcaption>{node.data?.target?.fields?.title}</figcaption>
-      </ImageWrapper>
+      </div>
     ),
     [BLOCKS.EMBEDDED_ENTRY]: (node) => (
       <BlogPostCard
