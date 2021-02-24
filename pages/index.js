@@ -12,7 +12,7 @@ import LazyLoad from 'react-lazyload';
 export default function Home({ posts, highlighted, website, categories }) {
   return (
     <>
-      <DefaultSeo page="Inicio" />
+      <DefaultSeo page="Inicio" url="/"/>
       <Container maxWidth="lg">
         <Title title={website.fields.name} description={website.fields.description} />
         <BlogPostPreview highlighted={highlighted} posts={posts} limited />
