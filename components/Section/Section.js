@@ -1,7 +1,9 @@
-import { StyledSection } from "./styles";
-
 const Section = ({ children, center }) => (
-  <StyledSection center={center}>{children}</StyledSection>
+  <div style={{
+    textAlign: center ? 'center' : 'left',
+    padding: '2rem 0'
+  }}
+  center={center}>{children}</div>
 );
 
 export { Section };

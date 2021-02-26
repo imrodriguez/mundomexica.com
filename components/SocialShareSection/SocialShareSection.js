@@ -10,10 +10,10 @@ import {
     TwitterIcon,
     WhatsappIcon,
 } from "react-share";
-import { SocialSection } from './styles';
+import styles from './SocialShareSection.module.css';
 
 const SocialShareSection = ({ url }) => (
-  <SocialSection>
+  <div className={styles.SocialWrapper}>
     <FacebookShareButton url={url}>
       <FacebookIcon size={32} />
     </FacebookShareButton>
@@ -29,7 +29,7 @@ const SocialShareSection = ({ url }) => (
     <WhatsappShareButton url={url}>
       <WhatsappIcon size={32} />
     </WhatsappShareButton>
-  </SocialSection>
+  </div>
 );
 
 export { SocialShareSection };

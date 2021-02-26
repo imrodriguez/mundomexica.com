@@ -1,20 +1,26 @@
-import { v4 as uuidv4 } from 'uuid';
-import { Grid, Element } from './styles';
-import { Image } from '../Image';
+import { v4 as uuidv4 } from "uuid";
+import styles from "./CategoriesSection.module.css";
+import Image from 'next/image';
 
 const CategoriesSection = ({ categories }) => (
-  <Grid>
-    {categories.map(cat => (
+  <div className={styles.CategoriesWrapper}>
+    {categories.map((cat) => (
       <div key={uuidv4()}>
         <a href={`/categoria/${cat.fields.url}`}>
-        <Element>
-          <Image image={cat.fields.image} />
-          <p>{cat.fields.name}</p>
-        </Element>
+          <div className={styles.Category}>
+            <Image 
+            src={`https:${cat.fields.image.fields.file.url}?fm=webp`} 
+            alt={cat.fields.image.fields.title}
+            title={cat.fields.image.fields.title}
+            width="273"
+            height="500"
+            layout="responsive"/>
+            <p>{cat.fields.name}</p>
+          </div>
         </a>
       </div>
-))}
-  </Grid >
+    ))}
+  </div>
 );
 
 export { CategoriesSection };

@@ -1,51 +1,50 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
-
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
-
   render() {
     return (
       <Html lang="es">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-          <link rel="preload" href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf" as="font"/>
-          <link rel="preconnect" href="https://www.googletagmanager.com"></link>
-          <link rel="preconnect" href="https://images.ctfassets.net"></link>
-          <link rel="preload" href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" as="font"/>
-          {this.props.styleTags}
+          <link
+            rel="preload"
+            href="/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf"
+            as="font"
+            type="font/woff"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf"
+            as="font"
+            type="font/woff"
+            crossorigin="anonymous"
+          />
 
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QRWQ5EG14"></script>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-0QRWQ5EG14"
+          ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -61,6 +60,13 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"ed693dc20b27e90074954a3dc5d909cf"})});
+            `,
+            }}
+          ></script>
         </body>
       </Html>
     );

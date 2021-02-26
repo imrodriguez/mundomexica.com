@@ -12,7 +12,7 @@ export default function Article({ category, posts }) {
         <Container>
           <Section center>
             <h1>{category.fields.name}</h1>
-            <p align='center'>{category.fields.description}</p>
+            <p data-align='center'>{category.fields.description}</p>
           </Section>
           <BlogPostPreview posts={posts} />
         </Container>

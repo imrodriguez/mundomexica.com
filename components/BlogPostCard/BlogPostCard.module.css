@@ -1,0 +1,89 @@
+.Card {
+  padding: 15px;
+  position: relative;
+}
+
+.Card[data-highlighted="true"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.Card a {
+  color: #000;
+  text-decoration: none;
+}
+
+.Card a:hover {
+  text-decoration: underline;
+}
+
+.Image {
+  width: 100%;
+  height: auto;
+  box-shadow: 4px 4px 10px 0px rgb(0 0 0 / 50%);
+}
+
+.Content {
+  padding: 1em 0.3em;
+  margin-top: -3px;
+}
+
+.Card[data-highlighted="true"] .Content {
+  margin-top: 0;
+  padding-left: 2em;
+  align-self: center;
+}
+
+.Content h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-family: var(--font-primary);
+}
+
+.Card[data-highlighted="true"] .Content h2 {
+  font-size: 2em;
+}
+
+.Card[data-highlighted="true"] .Content > div {
+  margin: auto;
+}
+
+.Content p {
+  font-weight: 200;
+  margin: 0;
+  text-align: justify;
+}
+
+.Category a {
+  color: #999;
+  font-family: var(--font-primary);
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 900px) {
+  .Image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .Card[data-highlighted="true"] {
+    display: block;
+  }
+
+  .Card[data-highlighted="true"] .Image {
+    width: 100%;
+  }
+
+  .Card[data-highlighted="true"] .Content {
+    padding: 1em .3em;
+  }
+
+  .Card[data-highlighted="true"] .Content h2 {
+    font-size: 1.5em;
+  }
+
+  .Card[data-highlighted="true"] .Content > div {
+    margin: 0;
+  }
+}

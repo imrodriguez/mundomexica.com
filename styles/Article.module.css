@@ -1,0 +1,55 @@
+.ArticleBox {
+  background: #fff;
+  margin-top: 4em;
+}
+
+.ArticleBox h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.ArticleMainWrapper {
+  padding: 2em 4em;
+}
+
+.ArticleMainWrapper .Time {
+  text-align: center;
+}
+
+.ImageArticle {
+  width: 100%;
+  height: auto;
+}
+
+.SocialSection {
+  padding-top: 0;
+  padding-bottom: 2em;
+}
+
+.SocialSection p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.SocialSection .SocialItem {
+  width: max-content;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.SocialSection .SocialItem > div {
+  width: max-content;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .ArticleBox h1 {
+    font-size: 2em;
+  }
+
+  .ArticleMainWrapper {
+    padding: 2em 1em;
+  }
+}

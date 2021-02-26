@@ -63,5 +63,10 @@
         "source": "/la-formacion-del-imperio-mexica",
         "destination": "/",
         "permanent": true
+    },
+    {
+        "source": "/page/:slug*",
+        "destination": "/articulos",
+        "permanent": true
     }
 ]
