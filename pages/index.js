@@ -18,7 +18,7 @@ export default function Home({ posts, highlighted, website, categories }) {
         <BlogPostPreview highlighted={highlighted} posts={posts} limited />
         <LazyLoad>
           <Section center>
-            <h2 className="pepito">Categorías</h2>
+            <h2>Categorías</h2>
             <CategoriesSection categories={categories.items} />
           </Section>
         </LazyLoad>
