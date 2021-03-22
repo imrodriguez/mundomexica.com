@@ -23,6 +23,7 @@
 
 .ContentWrapper a {
   color: rgb(198, 39, 39);
+  word-break: break-all;
 }
 
 .ContentWrapper figcaption {
