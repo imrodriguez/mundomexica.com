@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getPost } from "../../services/Posts";
 import { Container } from "../../components/Container";
 import { SocialShareSection } from "../../components/SocialShareSection";
@@ -6,11 +7,9 @@ import { Content } from "../../components/Content";
 import { BlogPostPreview } from "../../components/BlogPostPreview";
 import { Comments } from "../../components/Comments";
 import { SocialButtons } from "../../components/SocialButtons";
-import LazyLoad from "react-lazyload";
-import Image from "next/image";
 import styles from "../../styles/Article.module.css";
 
-export default function Article({ post }) {
+export default function Article({ post, related }) {
   return (
     <>
       <ArticleSeo article={post} />
@@ -34,7 +33,8 @@ export default function Article({ post }) {
               text={post.metaDescription}
             />
             <p className={styles.Time}>
-              Publicado el{" "}
+              Publicado el
+              {" "}
               <time dateTime={post.sys.createdAt}>
                 {new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}
               </time>
@@ -58,16 +58,12 @@ export default function Article({ post }) {
         </div>
 
         {related.length > 0 && <h2>Artículos relacionados</h2>}
-        <LazyLoad>
-          <BlogPostPreview posts={related} />
-        </LazyLoad>
-        <LazyLoad>
-          <Comments
-            url={`https://mundomexica.com/articulo/${post.fields.url}`}
-            id={post.fields.url}
-            title={post.fields.title}
-          />
-        </LazyLoad>
+        <BlogPostPreview posts={related} />
+        <Comments
+          url={`https://mundomexica.com/articulo/${post.fields.url}`}
+          id={post.fields.url}
+          title={post.fields.title}
+        />
       </Container>
     </>
   );

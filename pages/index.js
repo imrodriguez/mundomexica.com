@@ -7,21 +7,18 @@ import { getPosts } from "../services/Posts";
 import { getWebsiteConfig } from '../services/WebsiteConfig';
 import { getCategories } from '../services/Categories';
 import { DefaultSeo } from '../seo/default';
-import LazyLoad from 'react-lazyload';
 
 export default function Home({ posts, highlighted, website, categories }) {
   return (
     <>
-      <DefaultSeo page="Inicio" url="/"/>
+      <DefaultSeo page="Inicio" url="/" />
       <Container maxWidth="lg">
         <Title title={website.fields.name} description={website.fields.description} />
         <BlogPostPreview highlighted={highlighted} posts={posts} limited />
-        <LazyLoad>
-          <Section center>
-            <h2>Categorías</h2>
-            <CategoriesSection categories={categories.items} />
-          </Section>
-        </LazyLoad>
+        <Section center>
+          <h2>Categorías</h2>
+          <CategoriesSection categories={categories.items} />
+        </Section>
       </Container>
     </>
   );

@@ -8,8 +8,7 @@ export default async function preview(req, res) {
   }
 
   // Fetch the headless CMS to check if the provided `slug` exists
-  let post = await getPost(slug, true)
-  post = post.items[0]
+  const post = await getPost(slug, true)[0]
 
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!post) {
@@ -27,5 +26,5 @@ export default async function preview(req, res) {
   res.write(`<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
   <script>window.location.href = '${url}'</script>
   </head>`)
-  res.end()
+  return res.end()
 }

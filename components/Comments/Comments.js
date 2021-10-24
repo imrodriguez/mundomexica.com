@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import useOnScreen from '../../hooks/useOnScreen';
 
-const Comments = ({ url, id, title }) => {
+const Comments = () => {
     const commentsRef = useRef();
     const isVisible = useOnScreen(commentsRef);
 
     const renderComments = () => {
-        var d = document, s = d.createElement('script');
+        const d = document; const s = d.createElement('script');
         s.src = 'https://mundomexica.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
@@ -19,7 +19,7 @@ const Comments = ({ url, id, title }) => {
     }, [isVisible]);
 
     return (
-        <div ref={commentsRef} id="disqus_thread"></div>
+      <div ref={commentsRef} id="disqus_thread" />
     )
 };
 

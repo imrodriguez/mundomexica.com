@@ -7,7 +7,7 @@ import { DefaultSeo } from '../seo/default';
 export default function Articulos({ posts }) {
   return (
     <>
-      <DefaultSeo page="Articulos" url="/articulos"/>
+      <DefaultSeo page="Articulos" url="/articulos" />
       <Section center>
         <Container maxWidth="lg">
           <h1>Artículos</h1>

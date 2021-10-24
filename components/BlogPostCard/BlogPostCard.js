@@ -1,5 +1,5 @@
-import styles from "./BlogPostCard.module.css";
 import Image from "next/image";
+import styles from "./BlogPostCard.module.css";
 
 const BlogPostCard = ({ title,description, image, category, url, highlighted }) => (
   <div className={styles.Card} data-highlighted={highlighted}>
@@ -10,8 +10,9 @@ const BlogPostCard = ({ title,description, image, category, url, highlighted }) 
           alt={title}
           width={highlighted ? "611" : "311"}
           height={highlighted ? "248" : "126"}
-          quality="100"
+          quality="70"
           layout="responsive"
+          priority={highlighted}
         />
       </div>
     </a>

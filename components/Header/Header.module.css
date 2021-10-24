@@ -49,6 +49,8 @@
 .HamburguerToggle {
   display: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .HamburguerToggle svg {

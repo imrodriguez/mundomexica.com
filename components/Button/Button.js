@@ -10,7 +10,7 @@ const Button = ({ children, action, variant }) => {
   }
 
   return (
-    <button className={styles.Button} onClick={action} data-variant={variant}>
+    <button type="button" className={styles.Button} onClick={action} data-variant={variant}>
       {children}
     </button>
   );

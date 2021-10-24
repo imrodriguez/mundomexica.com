@@ -16,7 +16,7 @@ const BlogPostPreview = ({ posts = [], highlighted, limited = false }) => (
           description={highlighted.fields.metaDescription}
           category={highlighted.fields.category}
           url={highlighted.fields.url}
-          highlighted={true}
+          highlighted
         />
       </div>
     )}

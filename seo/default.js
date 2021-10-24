@@ -2,11 +2,11 @@ import { NextSeo } from 'next-seo';
 import generalData from '../config/generalData.json';
 
 const DefaultSeo = ({ page, url }) => (
-    <NextSeo
-        title={`${page} | ${generalData.name}`}
-        description={generalData.description}
-        canonical={`https://mundomexica.com${url}`}
-        openGraph={{
+  <NextSeo
+    title={`${page} | ${generalData.name}`}
+    description={generalData.description}
+    canonical={`https://mundomexica.com${url}`}
+    openGraph={{
             url: `${page} | ${generalData.name}`,
             title: generalData.name,
             description: generalData.description,
@@ -20,12 +20,12 @@ const DefaultSeo = ({ page, url }) => (
             type: 'website',
             locale: 'es_ES'
         }}
-        twitter={{
+    twitter={{
             handle: '@handle',
             site: '@site',
             cardType: 'summary_large_image',
         }}
-    />
+  />
 );
 
 export { DefaultSeo };

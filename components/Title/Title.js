@@ -6,11 +6,12 @@ const Title = ({ title, description }) => (
     <h1>
       <span className={styles.Name}>{title}</span>
       <img 
-      className={styles.Separator} 
-      src="/separador.png" 
-      alt="separador"
-      width="304"
-      height="5.38"/>
+        className={styles.Separator} 
+        src="/separador.png" 
+        alt="separador"
+        width="304"
+        height="5.38"
+      />
       <span className={styles.Surname}>{description}</span>
     </h1>
     <SocialButtons />
