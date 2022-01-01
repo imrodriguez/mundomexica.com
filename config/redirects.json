@@ -68,5 +68,10 @@
         "source": "/page/:slug*",
         "destination": "/articulos",
         "permanent": true
+    },
+    {
+        "source": "/categoria/sobre-mi",
+        "destination": "/sobre-mi",
+        "permanent": "true"
     }
 ]
