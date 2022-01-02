@@ -1,0 +1,25 @@
+.Breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: 2em 0;
+}
+
+.Breadcrumbs li {
+    display: inline-block;
+    margin-right: .5em;
+    font-family: var(--font-primary);
+}
+
+.Breadcrumbs li a {
+    color: rgb(198, 39, 39);
+}
+
+.Breadcrumbs li:after {
+    content: ">";
+    margin-left: .5em;
+}
+
+.Breadcrumbs li:last-child:after {
+    content: "";
+}

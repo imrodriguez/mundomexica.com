@@ -6,6 +6,6 @@ const Content = ({ content }) => (
   <div className={styles.ContentWrapper}>
     {documentToReactComponents(content, dtrOptions)}
   </div>
-    )
+);
 
 export { Content };
