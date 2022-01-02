@@ -5,6 +5,7 @@ import { SocialShareSection } from '../../components/SocialShareSection';
 import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
 import { BlogPostPreview } from '../../components/BlogPostPreview';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import styles from '../../styles/Article.module.css';
@@ -14,6 +15,7 @@ export default function Article({ post, related }) {
     <>
       <ArticleSeo article={post} />
       <Container>
+        <Breadcrumbs post={post} />
         <div className={styles.ArticleBox}>
           <Image 
             className={styles.ImageArticle}

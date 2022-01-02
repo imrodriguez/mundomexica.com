@@ -1,5 +1,5 @@
-import generalData from "../config/generalData.json";
 import { NextSeo, ArticleJsonLd } from "next-seo";
+import generalData from "../config/generalData.json";
 
 const ArticleSeo = ({ article }) => (
   <>

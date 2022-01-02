@@ -72,6 +72,6 @@
     {
         "source": "/categoria/sobre-mi",
         "destination": "/sobre-mi",
-        "permanent": "true"
+        "permanent": true
     }
 ]

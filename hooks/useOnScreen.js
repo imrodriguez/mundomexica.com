@@ -9,8 +9,8 @@ export default function useOnScreen(ref) {
         observer = new IntersectionObserver(
             ([entry]) => setIntersecting(entry.isIntersecting)
         )
-    } catch {
-        console.log('hola')
+    } catch (err) {
+        console.log(err);
     }
     
 
