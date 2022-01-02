@@ -1,10 +1,11 @@
-import generalData from "../config/generalData.json";
 import { NextSeo, ArticleJsonLd } from "next-seo";
+import generalData from "../config/generalData.json";
+import { articleURL } from "../config/routes";
 
 const ArticleSeo = ({ article }) => (
   <>
     <ArticleJsonLd
-      url={`https://mundomexica.com/articulo/${article.fields.url}`}
+      url={`${articleURL}/${article.fields.url}`}
       title={article.fields.title}
       images={[`https:${article.fields.image.fields.file.url}`]}
       datePublished={article.sys.createdAt}
@@ -17,7 +18,7 @@ const ArticleSeo = ({ article }) => (
     <NextSeo
       title={`${article.fields.title} | ${generalData.name}`}
       description={article.fields.metaDescription}
-      canonical={`https://mundomexica.com/articulo/${article.fields.url}`}
+      canonical={`${articleURL}/${article.fields.url}`}
       additionalMetaTags={[
         {
           name: "keywords",
@@ -25,7 +26,7 @@ const ArticleSeo = ({ article }) => (
         },
       ]}
       openGraph={{
-        url: `https://mundomexica.com/articulo/${article.fields.url}`,
+        url: `${articleURL}/${article.fields.url}`,
         title: article.fields.title,
         description: article.fields.metaDescription,
         images: [

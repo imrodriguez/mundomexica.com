@@ -8,6 +8,7 @@ import { BlogPostPreview } from '../../components/BlogPostPreview';
 import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import styles from '../../styles/Article.module.css';
+import { articleURL } from "../../config/routes";
 
 export default function Article({ post, related }) {
   return (
@@ -28,7 +29,7 @@ export default function Article({ post, related }) {
 
           <div className={styles.ArticleMainWrapper}>
             <h1>{post.fields.title}</h1>
-            <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+            <SocialShareSection url={`${articleURL}/${post.fields.url}`} text={post.metaDescription} />
             <p className={styles.Time}>
               Publicado el
               <time dateTime={post.sys.createdAt}>{new Intl.DateTimeFormat().format(new Date(post.sys.createdAt))}</time>
@@ -39,7 +40,7 @@ export default function Article({ post, related }) {
           <div className={styles.SocialSection}>
             <div className={styles.SocialItem}>
               <p>Comparte este artículo en redes sociales</p>
-              <SocialShareSection url={`https://mundomexica.com/articulo/${post.fields.url}`} text={post.metaDescription} />
+              <SocialShareSection url={`${articleURL}/${post.fields.url}`} text={post.metaDescription} />
             </div>
             <div className={styles.SocialItem}>
               <p>Síguenos en redes sociales</p>
@@ -50,7 +51,7 @@ export default function Article({ post, related }) {
         
         {related.length > 0 && <h2>Artículos relacionados</h2>}
         <BlogPostPreview posts={related} />
-        <Comments url={`https://mundomexica.com/articulo/${post.fields.url}`} id={post.fields.url} title={post.fields.title} />
+        <Comments url={`${articleURL}/${post.fields.url}`} id={post.fields.url} title={post.fields.title} />
       </Container>
     </>
   )

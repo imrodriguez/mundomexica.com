@@ -1,9 +1,10 @@
 import { JsonLd } from "react-schemaorg";
 import generalData from '../config/generalData.json';
+import { articleURL } from "../config/routes";
 
 const ArticleItem = ({ article }) => (
-    <JsonLd
-        item={{
+  <JsonLd
+    item={{
             "@context": "http://schema.org",
             "@type": "Article",
             "author": {
@@ -26,10 +27,10 @@ const ArticleItem = ({ article }) => (
             "dateModified": article.fields.date,
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://mundomexica.com/${article.fields.url}`
+                "@id": `${articleURL}/${article.fields.url}`
             }
         }}
-    />
+  />
 );
 
 export { ArticleItem };

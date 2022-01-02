@@ -1,17 +1,13 @@
 import { client } from '../lib/Contentful';
 
-const getCategories = () => {
-    return client.getEntries({
+const getCategories = () => client.getEntries({
         content_type: 'category'
     });
-};
 
-const getCategory = (slug) => {
-    return client.getEntries({
+const getCategory = (slug) => client.getEntries({
         content_type: 'category',
         'fields.url': slug
-    });
-}
+    })
 
 export {
     getCategories,

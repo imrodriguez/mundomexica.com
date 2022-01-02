@@ -1,11 +1,12 @@
 import { NextSeo } from 'next-seo';
 import generalData from '../config/generalData.json';
+import { DOMAIN } from "../config/routes";
 
 const DefaultSeo = ({ page, url }) => (
   <NextSeo
     title={`${page} | ${generalData.name}`}
     description={generalData.description}
-    canonical={`https://mundomexica.com${url}`}
+    canonical={`${DOMAIN}${url}`}
     openGraph={{
             url: `${page} | ${generalData.name}`,
             title: generalData.name,

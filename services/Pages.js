@@ -1,17 +1,13 @@
 import { client } from '../lib/Contentful';
 
-const getPages = () => {
-    return client.getEntries({
+const getPages = () => client.getEntries({
         content_type: 'page'
     });
-};
 
-const getPage = (slug) => {
-    return client.getEntries({
+const getPage = (slug) => client.getEntries({
         content_type: 'page',
         'fields.url': slug,
     });
-};
 
 export {
     getPages,

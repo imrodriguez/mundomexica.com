@@ -1,11 +1,9 @@
 import { client } from '../lib/Contentful';
 import { previewClient } from '../lib/Preview';
 
-const getPosts = () => {
-    return client.getEntries({
+const getPosts = () => client.getEntries({
         content_type: 'blogPost'
     });
-};
 
 const getPost = (slug, preview) => {
     if (preview) {
@@ -21,13 +19,11 @@ const getPost = (slug, preview) => {
     });
 };
 
-const getPostsByCategory = (category) => {
-    return client.getEntries({
+const getPostsByCategory = (category) => client.getEntries({
         content_type: 'blogPost',
         'fields.category.sys.contentType.sys.id': 'category',
         'fields.category.sys.id': category
     });
-};
 
 export {
     getPosts,

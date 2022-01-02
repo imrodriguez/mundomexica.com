@@ -1,14 +1,15 @@
-import generalData from "../config/generalData.json";
 import { NextSeo } from "next-seo";
+import generalData from "../config/generalData.json";
+import { categoryURL } from "../config/routes";
 
 const CategorySeo = ({ category }) => (
   <>
     <NextSeo
       title={`${category.fields.name} | ${generalData.name}`}
       description={category.fields.metaDescription}
-      canonical={`https://mundomexica.com/categoria/${category.fields.url}`}
+      canonical={`${categoryURL}/${category.fields.url}`}
       openGraph={{
-        url: `https://mundomexica.com/categoria/${category.fields.url}`,
+        url: `${categoryURL}/${category.fields.url}`,
         title: category.fields.name,
         description: category.fields.metaDescription,
         site_name: generalData.name,
