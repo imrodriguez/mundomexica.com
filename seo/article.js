@@ -13,11 +13,11 @@ const ArticleSeo = ({ article }) => (
       authorName={["Ariadna Rodriguez Marquez", "Mundo Mexica"]}
       publisherName="Ariadna Rodriguez Marquez"
       publisherLogo={`https:${generalData.logo.fields.file.url}`}
-      description={article.fields.metaDescription}
+      description={article.fields.seo.fields.metaDescription}
     />
     <NextSeo
-      title={`${article.fields.title} | ${generalData.name}`}
-      description={article.fields.metaDescription}
+      title={article.fields.seo.fields.metaTitle}
+      description={article.fields.seo.fields.metaDescription}
       canonical={`${articleURL}/${article.fields.url}`}
       additionalMetaTags={[
         {
