@@ -16,7 +16,7 @@ const dtrOptions = {
           layout="responsive"
           title={node.data?.target?.fields?.title}
           src={`https:${node.data?.target?.fields?.file?.url}?w=${node.data?.target?.fields?.file?.details?.image.width}`}
-          alt={node.data?.target?.fields?.title}
+          alt={node.data?.target?.fields?.description}
           width={node.data?.target?.fields?.file?.details?.image.width}
           height={node.data?.target?.fields?.file?.details?.image.height}
         />
