@@ -1,15 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { NextStrictCSP } from 'next-strict-csp';
-
-const HeadCSP = process.env.NODE_ENV === 'production' ? NextStrictCSP : Head
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="es">
-        <HeadCSP>
-          { process.env.NODE_ENV === 'production' && 
-          <meta httpEquiv="Content-Security-Policy" />}
+        <Head>
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
@@ -66,7 +61,7 @@ export default class MyDocument extends Document {
           function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"ed693dc20b27e90074954a3dc5d909cf"})});
           `}} 
           />
-        </HeadCSP>
+        </Head>
         <body>
           <Main />
           <NextScript />
