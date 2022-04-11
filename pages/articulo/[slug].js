@@ -6,7 +6,6 @@ import { ArticleSeo } from '../../seo/article';
 import { Content } from '../../components/Content';
 import { BlogPostPreview } from '../../components/BlogPostPreview';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
-import { Comments } from '../../components/Comments';
 import { SocialButtons } from '../../components/SocialButtons';
 import styles from '../../styles/Article.module.css';
 import { articleURL } from "../../config/routes";
@@ -53,7 +52,6 @@ export default function Article({ post, related }) {
         
         {related.length > 0 && <h2>Artículos relacionados</h2>}
         <BlogPostPreview posts={related} />
-        <Comments url={`${articleURL}/${post.fields.url}`} id={post.fields.url} title={post.fields.title} />
       </Container>
     </>
   )

@@ -5,13 +5,14 @@ import { categoryURL } from "../config/routes";
 const PageSeo = ({ page }) => (
   <>
     <NextSeo
-      title={`${page.fields.title} | ${generalData.name}`}
-      description={page.fields.metaDescription}
+      title={page.fields.seo.fields.metaTitle}
+      description={page.fields.seo.fields.metaDescription}
+      keywords={page.fields.seo.fields.keywords}
       canonical={`${categoryURL}/${page.fields.url}`}
       openGraph={{
         url: `${categoryURL}/${page.fields.url}`,
         title: page.fields.title,
-        description: page.fields.metaDescription,
+        description: page.fields.seo.fields.metaDescription,
         site_name: generalData.name,
         images: [
           {

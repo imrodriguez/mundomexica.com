@@ -19,6 +19,7 @@ const ArticleSeo = ({ article }) => (
       title={article.fields.seo.fields.metaTitle}
       description={article.fields.seo.fields.metaDescription}
       canonical={`${articleURL}/${article.fields.url}`}
+      keywords={article.fields.seo.fields.keywords}
       additionalMetaTags={[
         {
           name: "keywords",
