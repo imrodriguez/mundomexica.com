@@ -4,8 +4,9 @@ import { DOMAIN } from "../config/routes";
 
 const DefaultSeo = ({ page, url }) => (
   <NextSeo
-    title={`${page} | ${generalData.name}`}
-    description={generalData.description}
+    title={generalData.seo.fields.metaTitle}
+    description={generalData.seo.fields.metaDescription}
+    keywords={generalData.seo.fields.metaKeywords || ""}
     canonical={`${DOMAIN}${url}`}
     openGraph={{
             url: `${page} | ${generalData.name}`,
